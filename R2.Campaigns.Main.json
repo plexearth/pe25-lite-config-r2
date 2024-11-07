@@ -130,7 +130,7 @@
         "foreClr": "#FFF",
         "action": {
           "type": "custom",
-          "customData": "{\"type\":\"switchEdition\",\"target\":\"CLASSIC\",\"migrationConfig\":{\"appId\":\"0B3E489B9D934658940142574687A002\",\"appName\":\"Plex-Earth Pro\",\"planId\":\"5892A0F6072E44EDA9517D68817FD74B\",\"planName\":\"Plex-Earth Free Trial\"}}"
+          "customData": "{\"type\":\"switchEdition\",\"target\":\"PRO\",\"migrationConfig\":{\"appId\":\"0B3E489B9D934658940142574687A002\",\"appName\":\"Plex-Earth Pro\",\"planId\":\"5892A0F6072E44EDA9517D68817FD74B\",\"planName\":\"Plex-Earth Free Trial\"}}"
         },
         "dlgRes": "true",
         "runAfterDlg": "true"
@@ -141,7 +141,7 @@
         "foreClr": "#101010",
         "action": {
           "type": "custom",
-          "customData": "{\"type\":\"switchEdition\",\"target\":\"CLASSIC\"}"
+          "customData": "{\"type\":\"switchEdition\",\"target\":\"PRO\"}"
         },
         "dlgRes": "true",
         "runAfterDlg": "true"

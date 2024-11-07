@@ -1,9 +1,10 @@
 {
   "sysAppData": {
     "editions": {
-      "CLASSIC": {
+      "PRO": {
         "sessionInitConfig": "R2.Init.Session",
-        "helpUrl": "[$URL_PAGE_HELP]",
+        "helpUrl": "https://goto.plexearth.com/pe25/plugin/help",
+        "pricingUrl": "https://goto.plexearth.com/1/pe25/plugin/pricing",
         "activation": {
           "canTrial": "true",
           "trialRef": "36ABAB91C2CC459EB8FCBB4C0FF3764F",
@@ -15,15 +16,16 @@
           "dlgTrialTitle": "Free Trial",
           "dlgTrialText": "You must complete the registration to start your free trial!",
           "onActivationSuccessMessage": "onActivationSuccessMessage",
-          "onTrialSuccessMessage_Classic": "onTrialSuccessMessage_Classic",
+          "onTrialSuccessMessage": "onTrialSuccessMessage_Pro",
           "onSubExpiredMessage": "onSubcriptionExpiredMessage",
-          "onTrialExpiredMessage_Classic": "onTrialExpiredMessage_Classic",
-          "onSwitchEditionMessage": "onSwitchEditionMessage_Classic"
+          "onTrialExpiredMessage": "onTrialExpiredMessage_Pro",
+          "onSwitchEditionMessage": "onSwitchEditionMessage_Pro"
         }
       },
       "LITE": {
         "sessionInitConfig": "R2.Init.Session",
-        "helpUrl": "[$URL_PAGE_HELP]",
+        "helpUrl": "https://goto.plexearth.com/pe25-lite/plugin/help",
+        "pricingUrl": "https://goto.plexearth.com/1/pe25-lite/plugin/pricing",
         "activation": {
           "canTrial": "true",
           "trialRef": "8D079E86DA0242089C2E533A81DADE93",
@@ -35,14 +37,14 @@
           "dlgTrialTitle": "Free Registration",
           "dlgTrialText": "You must complete your registration on Plex-Earth Lite!",
           "onActivationSuccessMessage": "onLiteActivationSuccessMessage",
-          "onTrialSuccessMessage_Classic": "onTrialSuccessMessage_Lite",
+          "onTrialSuccessMessage": "onTrialSuccessMessage_Lite",
           "onSubExpiredMessage": "onLiteSubscriptionExpiredMessage",
           "onSwitchEditionMessage": "onSwitchEditionMessage_Lite"
         }
       }
     },
     "cuiVariations": {
-      "CLASSIC": {
+      "PRO": {
         "mainRbnTabId": "ID_TAB_PXEARTH",
         "ribbonTabs": {
           "ID_TAB_PXEARTH": {
@@ -108,7 +110,26 @@
   },
   "sysVars": {},
   "sysStrings": {},
-  "sysConstants": {},
+  "sysConstants": {
+    "[$PROD_NAME]": "Plex-Earth Lite",
+    "[$PROD_VAR]": "LITE",
+    "[$PROD_REF]": "pe25-lite",
+    "[$URL_GLOBAL_CDN]": "https://pe25-app-cdn.plexearth360.com",
+    "[$URL_ROOT_CDN]": "[$.]/cdn",
+    "[$URL_ROOT_GOTO]": "https://goto.plexearth.com/1",
+    "[$URL_PAGE_GOTO_PLUGIN]": "[$URL_ROOT_GOTO]/[$PROD_REF]/plugin",
+    "[$URL_PAGE_HELP]": "[$URL_PAGE_GOTO_PLUGIN]/help",
+    "[$URL_PAGE_WHATSNEW]": "[$URL_PAGE_GOTO_PLUGIN]/whatsnew",
+    "[$URL_PAGE_ADDCREDITS]": "[$URL_PAGE_GOTO_PLUGIN]/addcredits",
+    "[$URL_PAGE_DOWNLOAD]": "[$URL_PAGE_GOTO_PLUGIN]/download",
+    "[$URL_PAGE_LEARNMORE]": "[$URL_PAGE_GOTO_PLUGIN]/learnmore",
+    "[$URL_PAGE_PRICING]": "[$URL_PAGE_GOTO_PLUGIN]/pricing",
+    "[$URL_PAGE_UPGRADE]": "[$URL_PAGE_GOTO_PLUGIN]/upgrade",
+    "[$URL_PAGE_CONTACT_SALES]": "[$URL_PAGE_GOTO_PLUGIN]/sales",
+    "[$URL_PAGE_CONTACT_SUPPORT]": "[$URL_PAGE_GOTO_PLUGIN]/support",
+    "[$URL_PRODUCT]": "[$URL_PAGE_GOTO_PLUGIN]/website",
+    "[$EMAIL_SUPPORT]": "mailto:support@plexscape.com"
+  },
   "sysConditionSets": {},
   "sysSelections": {},
   "sysCommands": {},
@@ -145,9 +166,20 @@
       "btnRight": {
         "text": "Close",
         "dlgRes": "false"
+      },
+      "btnAction": {
+        "text": "I already have an Activation Code",
+        "backClr": "#F5F5F5",
+        "foreClr": "#101010",
+        "action": {
+          "type": "custom",
+          "customData": "{\"type\":\"sendStringToExecute\",\"cmd\":\".PXV_ACTIVATE_CODE\\n\"}"
+        },
+        "dlgRes": "true",
+        "runAfterDlg": "true"
       }
     },
-    "onTrialSuccessMessage_Classic": {
+    "onTrialSuccessMessage_Pro": {
       "type": "dialog",
       "isModal": "true",
       "content": "Your Plex-Earth 2025 Free Trial has just started!",
@@ -159,7 +191,7 @@
       },
       "title": "Welcome to Plex-Earth!"
     },
-    "onTrialExpiredMessage_Classic": {
+    "onTrialExpiredMessage_Pro": {
       "type": "dialog",
       "isModal": "true",
       "content": "<Grid VerticalAlignment='Center' MaxWidth='900'><TextBlock><Image Width='900' Source=''/></TextBlock><StackPanel><DockPanel Margin='24'><DockPanel.Background><SolidColorBrush Color='#101010' Opacity='0.9'/></DockPanel.Background><StackPanel Margin='24'><TextBlock Style='{DynamicResource H2}' Foreground='#FFF' TextWrapping='Wrap'>Your Free Trial Has Ended – What’s Next?</TextBlock><TextBlock Style='{DynamicResource H4}' Foreground='#FFF' TextWrapping='Wrap'><LineBreak/>You have two options:<LineBreak/>1) <Bold>Upgrade to one of our service plans</Bold><LineBreak/>&#160;&#160;&#160;For full access to all features.<LineBreak/>2) <Bold>Continue with Plex-Earth Lite</Bold><LineBreak/>&#160;&#160;&#160;Our free edition, to keep using basic features.<LineBreak/></TextBlock><TextBlock Style='{DynamicResource H4}' Foreground='#FFF'><Run>Need assistance or more information?&#160; </Run><Hyperlink Foreground='#DD6B45' NavigateUri='[$URL_PAGE_CONTACT_SUPPORT]'>Contact Support</Hyperlink></TextBlock></StackPanel></DockPanel></StackPanel></Grid>",
@@ -181,9 +213,20 @@
           "url": "[$URL_PAGE_UPGRADE]?utm_source=[$HOST_PLATFORM_REF]-[$PROD_REF]&utm_medium=in_app_message&utm_term=on_trial_expired&utm_campaign=upgrade&wky=[$wky]"
         }
       },
+      "btnAction": {
+        "text": "I already have an Activation Code",
+        "backClr": "#F5F5F5",
+        "foreClr": "#101010",
+        "action": {
+          "type": "custom",
+          "customData": "{\"type\":\"sendStringToExecute\",\"cmd\":\".PXV_ACTIVATE_CODE\\n\"}"
+        },
+        "dlgRes": "true",
+        "runAfterDlg": "true"
+      },
       "title": "Your Free Trial Has Ended – Keep Designing with Plex-Earth!"
     },
-    "onSwitchEditionMessage_Classic": {
+    "onSwitchEditionMessage_Pro": {
       "type": "dialog",
       "isModal": "true",
       "content": "<Grid VerticalAlignment='Center' MaxWidth='900'><TextBlock><Image Width='900' Source=''/></TextBlock><StackPanel><DockPanel Margin='24'><DockPanel.Background><SolidColorBrush Color='#101010' Opacity='0.9'/></DockPanel.Background><StackPanel Margin='24'><TextBlock Style='{DynamicResource H2}' Foreground='#FFF' TextWrapping='Wrap'>Switch To Plex-Earth Lite!</TextBlock><TextBlock Style='{DynamicResource H4}' Foreground='#FFF' TextWrapping='Wrap'>Our free edition, to keep using basic features.<LineBreak/></TextBlock><TextBlock Style='{DynamicResource H4}' Foreground='#FFF'><Run>Need assistance or more information?&#160; </Run><Hyperlink Foreground='#DD6B45' NavigateUri='[$URL_PAGE_CONTACT_SUPPORT]'>Contact Support</Hyperlink></TextBlock></StackPanel></DockPanel></StackPanel></Grid>",
@@ -232,6 +275,17 @@
       "btnRight": {
         "text": "Close",
         "dlgRes": "false"
+      },
+      "btnAction": {
+        "text": "I already have an Activation Code",
+        "backClr": "#F5F5F5",
+        "foreClr": "#101010",
+        "action": {
+          "type": "custom",
+          "customData": "{\"type\":\"sendStringToExecute\",\"cmd\":\".PXV_ACTIVATE_CODE\\n\"}"
+        },
+        "dlgRes": "true",
+        "runAfterDlg": "true"
       }
     },
     "onTrialSuccessMessage_Lite": {
@@ -260,7 +314,7 @@
         "foreClr": "#FFF",
         "action": {
           "type": "custom",
-          "customData": "{\"type\":\"switchEdition\",\"target\":\"CLASSIC\"}"
+          "customData": "{\"type\":\"switchEdition\",\"target\":\"PRO\"}"
         },
         "dlgRes": "true",
         "runAfterDlg": "true"

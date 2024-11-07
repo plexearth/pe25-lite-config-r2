@@ -7,23 +7,23 @@
     "legacyDummyIconUrl": "[$URL_GLOBAL_CDN]/assets/app/logo.png",
     "resources": {
       "totalTerrains": "Global.Terrains",
-      "totalSurfaces": "Global.Surfaces",
-      "totalVolumes": "Global.Volumes",
-      "onNewTerrain": [
-        "Global.Terrains"
+      "onNewTerrainFromProvider": [
+        "Global.Terrains",
+        "Global.Terrains.FromProvider"
       ],
-      "onNewSurface": [
-        "Global.Surfaces"
+      "onNewTerrainFromUserData": [
+        "Global.Terrains",
+        "Global.Terrains.FromUserData"
+      ],
+      "OnNewTerrainFromGeoTiff": [
+        "Global.Terrains",
+        "Global.Terrains.FromGeoTiff"
       ],
       "onNewVolume": [
         "Global.Volumes"
       ],
-      "onNewTiles": [
-        "Global.Terrains.Tiles",
-        "Global.Terrains.Tiles.Impressions"
-      ],
-      "onTileRestore": [
-        "Global.Terrains.Tiles.Impressions"
+      "onTerrainRestore": [
+        "Global.Terrains.Impressions"
       ]
     },
     "providers": {
@@ -58,7 +58,7 @@
         },
         "resources": {
           "totalTerrains": "Providers.GoogleElevations.Terrains",
-          "onNewTerrain": [
+          "onNewTerrainFromProvider": [
             "Providers.GoogleElevations.Terrains"
           ]
         }
@@ -98,15 +98,8 @@
         },
         "resources": {
           "totalTerrains": "Providers.Cesium.Terrains",
-          "onNewTerrain": [
+          "onNewTerrainFromProvider": [
             "Providers.Cesium.Terrains"
-          ],
-          "onNewTiles": [
-            "Providers.Cesium.Tiles",
-            "Providers.Cesium.Tiles.Impressions"
-          ],
-          "onTileRestore": [
-            "Providers.Cesium.Tiles.Impressions"
           ]
         }
       },
@@ -145,15 +138,8 @@
         },
         "resources": {
           "totalTerrains": "Providers.Mapzen.Terrains",
-          "onNewTerrain": [
+          "onNewTerrainFromProvider": [
             "Providers.Mapzen.Terrains"
-          ],
-          "onNewTiles": [
-            "Providers.Mapzen.Tiles",
-            "Providers.Mapzen.Tiles.Impressions"
-          ],
-          "onTileRestore": [
-            "Providers.Mapzen.Tiles.Impressions"
           ]
         }
       }

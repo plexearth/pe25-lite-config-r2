@@ -31,14 +31,15 @@
         "Global.Timelines.Views"
       ],
       "onNewQuickView": [
-        "Global.Images",
         "Global.QuickViews"
+      ],
+      "onNewTransitoryView": [
+        "Global.Images",
+        "Global.Images.Impressions",
+        "Global.Images.Previews"
       ],
       "onFetchRestore": [
         "Global.Images.Impressions"
-      ],
-      "onCreditConsumption": [
-        "Credits"
       ]
     },
     "providers": {
@@ -171,8 +172,9 @@
             "Providers.GoogleMaps.Images",
             "Providers.GoogleMaps.Impressions"
           ],
-          "onNewQuickView": [
-            "Providers.GoogleMaps.QuickViews"
+          "onNewTransitoryView": [
+            "Providers.GoogleMaps.Images",
+            "Providers.GoogleMaps.Impressions"
           ],
           "onFetchRestore": [
             "Providers.GoogleMaps.Impressions"
@@ -225,7 +227,7 @@
         "hasGlobalCoverage": "true",
         "tileOverlap": "0.001,0.05",
         "useCloud": "true",
-        "creditsPerTile": "1",
+        "creditsPerTile": "[var:[VARTAG_AIRBUS_CREDITS_PER_TILE]]",
         "permissions": {
           "canDynamicView": "false",
           "canMosaic": "true",
@@ -272,7 +274,7 @@
         "isAutoSuggested": "false",
         "hasGlobalCoverage": "true",
         "useCloud": "true",
-        "creditsPerTile": "2",
+        "creditsPerTile": "[var:[VARTAG_MAXAR_CREDITS_PER_TILE]]",
         "permissions": {
           "canDynamicView": "false",
           "canMosaic": "true",
@@ -322,7 +324,7 @@
         "tileOverlap": "0.001,0.05",
         "allowCustomKey": "[var:[VARTAG_NEARMAP_CUSTOM_KEY]]",
         "useCloud": "true",
-        "creditsPerTile": "5",
+        "creditsPerTile": "[var:[VARTAG_NEARMAP_CREDITS_PER_TILE]]",
         "permissions": {
           "canDynamicView": "false",
           "canMosaic": "true",
@@ -375,7 +377,7 @@
         "dsId": "NA_WAC",
         "dsName": "North America 30cm resolution",
         "useCloud": "true",
-        "creditsPerTile": "4",
+        "creditsPerTile": "[var:[VARTAG_HEXAGON_CREDITS_PER_TILE]]",
         "permissions": {
           "canDynamicView": "false",
           "canMosaic": "true",

@@ -7,6 +7,31 @@
     "boostMode": "[tag:[Sta.Settings.BoostMode]] ?? false",
     "bingKey": "yR5yyLHJ2v9sQMLDROIp~X92TwNaTqJdw1G2f-ALgyg~Avp6GzcvmkgAlpQKPS_S9efEqcpDyv5jlHnSn0KFEeLPOwHW8QIgO1rx-UVQ447_",
     "kmlDescr": "Created with <a href='[$URL_PRODUCT]'>[$PROD_NAME]</a>",
+    "consumables": {
+      "credits": {
+        "resKey": "Consumables.Credits"
+      }
+    },
+    "dataKeys": {
+      "tagHost": "Data.Host",
+      "tagPlatform": "Data.Platform",
+      "tagProduct": "Data.Product",
+      "tagInstaller": "Data.Installer",
+      "tagCulture": "Data.Culture",
+      "tagScreen": "Data.Screen",
+      "tagDefaultGeo": "Sta.Settings.DefaultGeo",
+      "tagDefaultUnits": "Sta.Settings.DefaultUnits",
+      "resSessions": "Global.Sessions",
+      "resErrors": "UX.General.Errors",
+      "metadata": {
+        "Consumables.Credits": {
+          "name": "Credits",
+          "title": "Credits (Used/Total)",
+          "showInMyAccount": "true",
+          "isCredits": "true"
+        }
+      }
+    },
     "features": {
       "hasPremium": "[var:[HAS_PREMIUM]]",
       "hasTimeviews": "[var:[HAS_TIMEVIEWS]]",
@@ -34,28 +59,8 @@
       "onPrintDeny": "onPrintDeny",
       "onCommandDeny": "onCommandDeny",
       "onCustomMapDeny": "onCustomMapDeny",
-      "onAddCredits": "onAddCredits"
-    },
-    "dataKeys": {
-      "tagHost": "Data.Host",
-      "tagPlatform": "Data.Platform",
-      "tagProduct": "Data.Product",
-      "tagInstaller": "Data.Installer",
-      "tagCulture": "Data.Culture",
-      "tagScreen": "Data.Screen",
-      "tagDefaultGeo": "Sta.Settings.DefaultGeo",
-      "tagDefaultUnits": "Sta.Settings.DefaultUnits",
-      "resSessions": "Global.Sessions",
-      "resErrors": "UX.General.Errors",
-      "creditsResKey": "Credits",
-      "metadata": {
-        "Credits": {
-          "name": "Credits",
-          "title": "Credits (Used/Total)",
-          "showInMyAccount": "true",
-          "isCredits": "true"
-        }
-      }
+      "onAddCredits": "onAddCredits",
+      "onServicePlans": "onServicePlans"
     },
     "commerce": {
       "defaultCurrency": "EUR",
@@ -91,7 +96,7 @@
               "isEnabled": "true"
             },
             "PXID_PANEL_CONTEXTUAL_DATA": {
-              "isVisible": "[var:[IS_CLASSIC]] ?? false",
+              "isVisible": "[var:[IS_PRO]] ?? false",
               "isEnabled": "true"
             },
             "PXID_PANEL_CONTEXTUAL_DATA_LITE": {
@@ -103,7 +108,7 @@
               "isEnabled": "true"
             },
             "PXID_PANEL_GE": {
-              "isVisible": "[var:[IS_CLASSIC]] ?? false",
+              "isVisible": "[var:[IS_PRO]] ?? false",
               "isEnabled": "true"
             },
             "PXID_PANEL_GE_LITE": {
@@ -111,7 +116,7 @@
               "isEnabled": "true"
             },
             "PXID_PANEL_SERVICE": {
-              "isVisible": "[var:[IS_CLASSIC]] ?? false",
+              "isVisible": "[var:[IS_PRO]] ?? false",
               "isEnabled": "true"
             },
             "PXID_PANEL_SERVICE_LITE": {
@@ -141,20 +146,7 @@
     "NOW_UTC": "[$now]"
   },
   "sysStrings": {},
-  "sysConstants": {
-    "[$URL_PAGE_GOTO_PLUGIN]": "[$URL_ROOT_GOTO]/[$PROD_REF]/plugin",
-    "[$URL_PAGE_HELP]": "[$URL_PAGE_GOTO_PLUGIN]/help",
-    "[$URL_PAGE_WHATSNEW]": "[$URL_PAGE_GOTO_PLUGIN]/whatsnew",
-    "[$URL_PAGE_ADDCREDITS]": "[$URL_PAGE_GOTO_PLUGIN]/addcredits",
-    "[$URL_PAGE_DOWNLOAD]": "[$URL_PAGE_GOTO_PLUGIN]/download",
-    "[$URL_PAGE_LEARNMORE]": "[$URL_PAGE_GOTO_PLUGIN]/learnmore",
-    "[$URL_PAGE_PRICING]": "[$URL_PAGE_GOTO_PLUGIN]/pricing",
-    "[$URL_PAGE_UPGRADE]": "[$URL_PAGE_GOTO_PLUGIN]/upgrade",
-    "[$URL_PAGE_CONTACT_SALES]": "[$URL_PAGE_GOTO_PLUGIN]/sales",
-    "[$URL_PAGE_CONTACT_SUPPORT]": "[$URL_PAGE_GOTO_PLUGIN]/support",
-    "[$URL_PRODUCT]": "[$URL_PAGE_GOTO_PLUGIN]/website",
-    "[$EMAIL_SUPPORT]": "mailto:support@plexscape.com"
-  },
+  "sysConstants": {},
   "sysConditionSets": {
     "IS_GOOD_MAP_EXPLORER": {
       "conditions": [
@@ -213,6 +205,9 @@
     "Terrain.New.FromGeoTIFF": {
       "isAllowed": "[var:[HAS_GEOTIFF]]"
     },
+    "Terrain.Drape": {
+      "isAllowed": "[var:[HAS_TERRAIN]]"
+    },
     "Terrain.Tools": {
       "isAllowed": "[var:[HAS_TERRAIN]]"
     },
@@ -248,12 +243,12 @@
     }
   },
   "sysCommandLimitSets": {
-    "Credits": {
+    "Consumables.Credits": {
       "isEnabled": "true",
       "limits": [
         {
           "isEnabled": "true",
-          "key": "Credits",
+          "key": "Consumables.Credits",
           "onReached": {
             "type": "gotoNotif",
             "notifId": "onLimitCreditsExceeded"
@@ -287,6 +282,10 @@
     "onHelp": {
       "type": "gotoUrl",
       "url": "[$URL_PAGE_HELP]?utm_source=[$HOST_PLATFORM_REF]-[$PROD_REF]&utm_medium=ribbon&utm_term=pxv_help&"
+    },
+    "onServicePlans": {
+      "type": "gotoUrl",
+      "url": "[$URL_PAGE_PRICING]?utm_source=[$HOST_PLATFORM_REF]-[$PROD_REF]&wky=[$wky]"
     },
     "onSignIn": {
       "type": "gotoCamp",

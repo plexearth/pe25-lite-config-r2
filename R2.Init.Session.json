@@ -9,7 +9,7 @@
     }
   },
   "sysVars": {
-    "IS_CLASSIC": "false",
+    "IS_PRO": "false",
     "IS_LITE": "true",
     "HAS_PREMIUM": "false",
     "HAS_TIMEVIEWS": "false",
@@ -32,7 +32,11 @@
     "VARTAG_NEARMAP_ZOOM_MAX": "",
     "VARTAG_NEARMAP_ZOOM_MIN": "",
     "VARTAG_NEARMAP_CUSTOM_KEY": "false",
-    "VARTAG_GOOGLE_MAPS_ZOOM_MAX": "21"
+    "VARTAG_GOOGLE_MAPS_ZOOM_MAX": "21",
+    "VARTAG_AIRBUS_CREDITS_PER_TILE": "1",
+    "VARTAG_HEXAGON_CREDITS_PER_TILE": "4",
+    "VARTAG_MAXAR_CREDITS_PER_TILE": "2",
+    "VARTAG_NEARMAP_CREDITS_PER_TILE": "5"
   },
   "sysStrings": {},
   "sysConstants": {
