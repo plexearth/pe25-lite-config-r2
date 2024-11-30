@@ -50,7 +50,7 @@
     "[$PROD_REF]": "pe25-lite",
     "[$URL_GLOBAL_CDN]": "https://pe25-app-cdn.plexearth360.com",
     "[$URL_ROOT_CDN]": "[$.]/cdn",
-    "[$URL_ROOT_GOTO]": "https://goto.plexearth.com/1"
+    "[$URL_ROOT_GOTO]": "https://goto.plexearth.com"
   },
   "sysConditionSets": {},
   "sysSelections": {},
